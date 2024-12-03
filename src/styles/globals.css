@@ -1,21 +1,262 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Body Styles */
+body {
+  font-family: "Outfit", sans-serif;
+  margin: 20px; 
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+  background-color: #fff; 
+  font-size: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+header {
+  text-align: left; 
+  margin: 0 0 30px 0; 
+  padding: 0;
+}
+
+header h1 {
+  color: #2c3e50;
+  margin: 0; 
+  padding: 0;
+}
+
+.black-text {
+  color: black;
+}
+
+.blue-text {
+  color: #1b1b9b;
+}
+
+/* Content section */
+.content1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0; 
+  padding: 0 10px; 
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.text-section1 {
+  flex: 2;
+  padding-left: 4%;
+  margin-left: 2%; 
+}
+
+.text-section {
+  flex: 2;
+  padding: 10px;
+  margin-right: 20px; 
+  padding-right: 5%;
+}
+
+.text-section1 p {
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  
+}
+
+.text-section1 h1 {
+  font-size: 35px;
+}
+
+.text-section p {
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+.text-section h1 {
+  font-size: 35px;
+}
+
+.image-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.image-section1 img {
+  width: 35em; 
+  height: auto; 
+  border-radius: 10px;
+  object-fit: cover; 
+}
+
+.image-section img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 10px;
+  object-fit: cover; 
+}
+
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-item {
+  margin-bottom: 15px; 
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: #f4f4f4;
+  border: none; 
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.accordion-button:hover, .accordion-button.active {
+  background: #1b1b9b;
+  color: white;
+}
+
+.accordion-content {
+  display: block; 
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height 0.5s ease; 
+  padding: 0 10px; 
+}
+
+.accordion-content p {
+  margin: 10px 0;
+}
+
+.accordion-content ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+  font-size: large;
+}
+
+.accordion-button.active .icon {
+  transform: rotate(180deg); 
+}
+
+
+.accordion-item {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  margin-bottom: 10px; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  body {
+      padding-left: 50px;
+      padding-right: 50px;
+      font-size: 18px; 
+  }
+
+  .content {
+      margin-top: 50px; 
+  }
+
+  .text-section1, .text-section {
+      flex: 1;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .image-section {
+      flex: 1;
+  }
+
+  .image-section img {
+      width: 100%; 
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* For Mobile Phones (screen width <= 768px) */
+@media (max-width: 768px) {
+  body {
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px; 
+  }
+
+  header h1 {
+      font-size: 24px; 
+  }
+
+  .content {
+      flex-direction: column; 
+      margin-top: 20px; 
+  }
+
+  .text-section1, .text-section {
+      flex: 1;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 15px;
+  }
+
+  .image-section {
+      flex: 1;
+      padding: 0;
+      margin-bottom: 15px; 
+  }
+
+  .image-section img {
+      width: 100%; 
+      border-radius: 5px;
+  }
+
+  .accordion-button {
+      padding: 12px;
+  }
+}
+
+/* For Extra Small Mobile Phones (screen width <= 480px) */
+@media (max-width: 480px) {
+  body {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 14px; 
+  }
+
+  header h1 {
+      font-size: 20px; 
+  }
+
+  .content {
+      margin-top: 15px; 
+  }
+
+  .text-section1, .text-section {
+      padding: 10px;
+  }
+
+  .image-section img {
+      width: 100%; 
+      border-radius: 3px;
+  }
+
+  .accordion-button {
+      font-size: 14px; 
+  }
 }
